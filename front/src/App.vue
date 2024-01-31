@@ -1,6 +1,9 @@
 <template>
   <h1>{{ data.test }}</h1>
   <button class="btn btn-primary" v-on:click="axiosTest()">axios테스트</button>
+  <button class="btn btn-primary" v-on:click="axiosPostTest()">
+    axios post 테스트
+  </button>
 
   <router-view></router-view>
 
@@ -27,9 +30,16 @@ export default {
         alert(res.data);
       });
 
+    const axiosPostTest = () => {
+      axios.post("/api/postest", { data: "data" }).then((res) => {
+        alert(res.data);
+      });
+    };
+
     return {
       data,
       axiosTest,
+      axiosPostTest,
     };
   },
 };
