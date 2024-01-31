@@ -32,7 +32,7 @@ export default {
 
     const axiosPostTest = () => {
       axios.post("/api/postest", { data: "data" }).then((res) => {
-        alert(res.data);
+        alert(JSON.stringify(res.data));
       });
     };
 
